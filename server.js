@@ -5,6 +5,7 @@ const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const WebpackConfig = require('./webpack.config')
+const history = require('connect-history-api-fallback')
 
 const app = express()
 const compiler = webpack(WebpackConfig)
@@ -27,6 +28,12 @@ if(dev) {
     return
   }
 }
+
+//配合vue-router 启用html5 history模式
+app.use(history({
+  verbose: dev,
+  index: '/'
+}))
 
 app.get('/', function(req, res){
   res.sendFile(path.join(__dirname, dev? './src/index.html' : './dist/index_prod.html'))

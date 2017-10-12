@@ -10,6 +10,11 @@ const config = {
     publicPath: '/dist/',
     filename: 'index.js'
   },
+  resolve: {
+    alias: {
+      'vue': 'vue/dist/vue.js'
+    }
+  },
   module: {
     rules: [
       {
