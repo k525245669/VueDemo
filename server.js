@@ -29,12 +29,13 @@ if(dev) {
 }
 
 app.get('/', function(req, res){
-  res.sendFile(path.join(__dirname, dev? 'index.html' : 'index_prod.html'))
+  res.sendFile(path.join(__dirname, dev? './src/index.html' : './dist/index_prod.html'))
 })
 
 app.use('/dist', express.static('dist'))
+app.use(express.static('public'))
 
-const port = process.env.PORT || 8888
+var port = process.env.PORT || 8888
 module.exports = app.listen(port, () => {
   console.log(`Server listening on http://localhost:${port}, Ctrl+C to stop`)
 })

@@ -3,12 +3,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 const config = {
   entry: {
-    main: './main'
+    main: './src/index'
   },
   output: {
     path: path.join(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'main.js'
+    filename: 'index.js'
   },
   module: {
     rules: [
@@ -47,7 +47,7 @@ const config = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('main.css')
+    new ExtractTextPlugin('index.css')
   ]
 }
 
