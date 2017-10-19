@@ -24,4 +24,4 @@
 
 ## EMOJI
 git commit -m '`:emoji_name:`'
-like`:roket:`
+like:roket:
