@@ -22,3 +22,6 @@
    2.npm run start   
 
 
+## EMOJI
+git commit -m '`:emoji_name:`'
+like`:roket:`
